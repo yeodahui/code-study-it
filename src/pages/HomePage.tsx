@@ -1,11 +1,14 @@
-import { useQuery } from "@tanstack/react-query";
-import { getPosts } from "../modules/api";
+import Container from "../components/Container";
+import PostList from "../components/PostList";
+import styles from "./HomePage.module.css";
 
 function HomePage() {
-  const result = useQuery({ queryKey: ["posts"], queryFn: getPosts });
-  console.log(result);
-
-  return <div>홈페이지</div>;
+  return (
+    <Container className={styles.container}>
+      포스트리스트 구현
+      <PostList />
+    </Container>
+  );
 }
 
 export default HomePage;
