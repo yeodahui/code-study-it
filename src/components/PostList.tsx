@@ -5,7 +5,11 @@ import styles from "./PostList.module.css";
 import { getPosts } from "../modules/api";
 
 function PostList() {
-  const posts = [];
+  const { data: postsData } = useQuery({
+    queryKey: ["posts"],
+    queryFn: getPosts,
+  });
+  const posts: PostValue[] = postsData?.results ?? [];
 
   return (
     <div className={styles.postList}>
