@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Post as PostValue } from "../types";
 import Post from "./Post";
 import styles from "./PostList.module.css";
-import { getPosts } from "../modules/api";
+import { getPosts } from "../utils/api";
 
 function PostList() {
   const { data: postsData } = useQuery({
