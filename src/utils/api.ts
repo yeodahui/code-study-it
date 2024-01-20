@@ -10,7 +10,7 @@ export async function getPosts(): Promise<Posts> {
   return await response.json();
 }
 
-export async function getPostsByUsername(username: string) {
+export async function getPostsByUsername(username: string): Promise<Posts> {
   const response = await fetch(`${BASE_URL}/posts?username=${username}`);
   return await response.json();
 }
